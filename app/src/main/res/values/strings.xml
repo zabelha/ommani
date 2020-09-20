@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">Ommani</string>
+    <string name="mensagem_inicial">LOGIN</string>
+
+    <string name="action_buscar">Buscar</string>
+    <string name="action_atualizar">atualizar</string>
+    <string name="action_adicionar">Adicionar</string>
+    <string name="action_config">Configurações</string>
+    <string name="appwidget_text">EXAMPLE</string>
+    <string name="add_widget">Add widget</string>
+</resources>
