@@ -66,9 +66,10 @@ class TelaInicialActivity : DebugActivity(){
         if(id == R.id.action_buscar){
             Toast.makeText(this, "botão buscar", Toast.LENGTH_LONG).show()
         } else if (id == R.id.action_atualizar) {
-            Toast.makeText(this, "botão atualizar", Toast.LENGTH_LONG).show()
+            Toast.makeText(this, "CARREGANDO...", Toast.LENGTH_LONG).show()
         } else if (id == R.id.action_config){
-            Toast.makeText(this, "botão configurar", Toast.LENGTH_LONG).show()
+            var intent = Intent(this, TelaConfiguracoesActivity::class.java)
+            startActivity(intent)
         } else if (id == android.R.id.home){
             finish()
         }
