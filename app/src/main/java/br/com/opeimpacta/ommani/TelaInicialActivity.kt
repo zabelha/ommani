@@ -5,54 +5,58 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.Menu
 import android.view.MenuItem
+import android.widget.LinearLayout
 import android.widget.Toast
+import androidx.appcompat.app.ActionBarDrawerToggle
+import androidx.core.view.GravityCompat
+import androidx.drawerlayout.widget.DrawerLayout
+import androidx.recyclerview.widget.DefaultItemAnimator
+import androidx.recyclerview.widget.LinearLayoutManager
+import com.google.android.material.navigation.NavigationView
 import kotlinx.android.synthetic.main.activity_tela_inicial.*
 import kotlinx.android.synthetic.main.login.*
+import kotlinx.android.synthetic.main.nav_view.*
 import kotlinx.android.synthetic.main.toolbar.*
+import br.com.opeimpacta.ommani.Produtos as Produtos
 
-class TelaInicialActivity : DebugActivity(){
+class TelaInicialActivity : DebugActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_tela_inicial)
 
-        imgCristal.setImageResource(R.drawable.cristal)
-        imgYoga.setImageResource(R.drawable.yoga)
-        imgMassagem.setImageResource(R.drawable.massagem)
-
-
-        val args = intent.extras
-        val nome = args?.getString("nome_usuario")
-        val numero = args?.getInt("numero")
-
-        Toast.makeText(this, "Usuário: $nome", Toast.LENGTH_LONG).show()
+        this.drawerLayout = layoutMenu_lateral
+        this.navView = menu_lateral
 
         setSupportActionBar(toolbar)
 
         supportActionBar?.title = "Nossos Produtos"
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
 
-        botao_cristais.setOnClickListener { onClickCristais() }
-        botao_yoga.setOnClickListener { onClickYoga() }
-        botao_massagem.setOnClickListener { onClickMassagem() }
+        configuraMenuLateral()
+
+        recyclerProdutos?.layoutManager = LinearLayoutManager(this)
+        recyclerProdutos?.itemAnimator = DefaultItemAnimator()
+        recyclerProdutos.setHasFixedSize(true)
     }
 
-    fun onClickCristais(){
-        var intent = Intent(this, TelaCristaisActivity::class.java)
-
-        startActivity(intent)
+    override fun onResume() {
+        super.onResume()
+        taskProdutos()
     }
 
-    fun onClickYoga(){
-        var intent = Intent(this, TelaYogaActivity::class.java)
 
-        startActivity(intent)
+    private  var produtos = listOf<Produtos>()
+    fun taskProdutos() {
+        produtos = ProdutoService.getProdutos(this)
+        recyclerProdutos?.adapter = ProdutoAdapter(produtos) { onClickProduto(it)}
     }
 
-    fun onClickMassagem(){
-        var intent = Intent(this, TelaMassagemActivity::class.java)
-
-        startActivity(intent)
+    fun onClickProduto(produtos: Produtos) {
+        val it = Intent(this, ProdutoActivity::class.java)
+        it.putExtra("produto", produtos)
+        startActivity(it)
     }
+
 
 
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {
@@ -67,9 +71,6 @@ class TelaInicialActivity : DebugActivity(){
             Toast.makeText(this, "botão buscar", Toast.LENGTH_LONG).show()
         } else if (id == R.id.action_atualizar) {
             Toast.makeText(this, "CARREGANDO...", Toast.LENGTH_LONG).show()
-        } else if (id == R.id.action_config){
-            var intent = Intent(this, TelaConfiguracoesActivity::class.java)
-            startActivity(intent)
         } else if (id == android.R.id.home){
             finish()
         }

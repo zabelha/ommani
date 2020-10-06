@@ -8,28 +8,27 @@ import androidx.appcompat.app.ActionBarDrawerToggle
 import androidx.core.view.GravityCompat
 import androidx.drawerlayout.widget.DrawerLayout
 import com.google.android.material.navigation.NavigationView
-import kotlinx.android.synthetic.main.activity_tela_configuracoes.*
-import kotlinx.android.synthetic.main.activity_tela_configuracoes.layoutMenu_lateral
+import kotlinx.android.synthetic.main.activity_tela_faq.*
+import kotlinx.android.synthetic.main.activity_tela_faq.layoutMenu_lateral
 import kotlinx.android.synthetic.main.activity_tela_inicial.*
 import kotlinx.android.synthetic.main.nav_view.*
 import kotlinx.android.synthetic.main.toolbar.*
 
-class TelaConfiguracoesActivity :DebugActivity(){
+class TelaFaqActivity : DebugActivity(){
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_tela_configuracoes)
+        setContentView(R.layout.activity_tela_faq)
 
         setSupportActionBar(toolbar)
 
         this.drawerLayout = layoutMenu_lateral
         this.navView = menu_lateral
 
-        configuraMenuLateral()
-
-        supportActionBar?.title = "Configurações"
+        supportActionBar?.title = "FAQ"
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
 
         configuraMenuLateral()
     }
 
-    }
+
+}

@@ -8,4 +8,14 @@
     <string name="action_config">Configurações</string>
     <string name="appwidget_text">EXAMPLE</string>
     <string name="add_widget">Add widget</string>
+    <string name="nav_produtos">Produtos</string>
+    <string name="nav_perfil">Perfil</string>
+    <string name="nav_faq">FAQ</string>
+    <string name="nav_configurações">Configurações</string>
+    <string name="ommani_ml">O M M A N I</string>
+    <string name="navigationDrawer">Abrir</string>
+    <string name="navigation_drawer_open">Abrir</string>
+    <string name="navigation_drawer_close">fechar</string>
+    <string name="nav_sobre_nos">Sobre</string>
+    <string name="nav_sair">Sair</string>
 </resources>
