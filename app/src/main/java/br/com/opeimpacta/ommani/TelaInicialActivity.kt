@@ -1,5 +1,6 @@
 package br.com.opeimpacta.ommani
 
+import android.content.Context
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -13,16 +14,21 @@ import androidx.drawerlayout.widget.DrawerLayout
 import androidx.recyclerview.widget.DefaultItemAnimator
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.google.android.material.navigation.NavigationView
+import kotlinx.android.synthetic.main.activity_novo_produto.*
 import kotlinx.android.synthetic.main.activity_tela_inicial.*
 import kotlinx.android.synthetic.main.login.*
 import kotlinx.android.synthetic.main.nav_view.*
 import kotlinx.android.synthetic.main.toolbar.*
 import br.com.opeimpacta.ommani.Produtos as Produtos
 
-class TelaInicialActivity : DebugActivity() {
+class TelaInicialActivity : DebugActivity(), NavigationView.OnNavigationItemSelectedListener {
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_tela_inicial)
+
+        val nome = Prefs.getString("nome")
+        Toast.makeText(this, nome, Toast.LENGTH_LONG).show()
 
         this.drawerLayout = layoutMenu_lateral
         this.navView = menu_lateral
@@ -47,8 +53,12 @@ class TelaInicialActivity : DebugActivity() {
 
     private  var produtos = listOf<Produtos>()
     fun taskProdutos() {
-        produtos = ProdutoService.getProdutos(this)
-        recyclerProdutos?.adapter = ProdutoAdapter(produtos) { onClickProduto(it)}
+        Thread {
+            produtos = ProdutoService.getProdutos(this)
+            runOnUiThread {
+                recyclerProdutos?.adapter = ProdutoAdapter(produtos) { onClickProduto(it) }
+            }
+        }.start()
     }
 
     fun onClickProduto(produtos: Produtos) {
@@ -73,6 +83,10 @@ class TelaInicialActivity : DebugActivity() {
             Toast.makeText(this, "CARREGANDO...", Toast.LENGTH_LONG).show()
         } else if (id == android.R.id.home){
             finish()
+        }else if (id == R.id.action_adicionar){
+            var intent = Intent(this, NovoProduto::class.java)
+
+            startActivity(intent)
         }
         return super.onOptionsItemSelected(item)
     }

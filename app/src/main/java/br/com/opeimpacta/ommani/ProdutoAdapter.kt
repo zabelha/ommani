@@ -14,8 +14,7 @@ import java.text.FieldPosition
 
 class ProdutoAdapter (
     val produtos: List<Produtos>,
-    val onClick: (Produtos) -> Unit
-): RecyclerView.Adapter<ProdutoAdapter.ProdutosViewHolder>() {
+    val onClick: (Produtos) -> Unit): RecyclerView.Adapter<ProdutoAdapter.ProdutosViewHolder>() {
 
     class ProdutosViewHolder(view: View): RecyclerView.ViewHolder(view){
         val cardNome: TextView

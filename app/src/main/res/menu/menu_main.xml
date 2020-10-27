@@ -13,4 +13,9 @@
             android:title="@string/action_atualizar"
             app:showAsAction="ifRoom" />
 
+    <item android:id="@+id/action_adicionar"
+        android:icon="@drawable/ic_adicionar_white"
+        android:title="@string/action_adicionar"
+        app:showAsAction="ifRoom" />
+
 </menu>
