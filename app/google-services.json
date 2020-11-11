@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "859512484425",
+    "firebase_url": "https://ommaniapp.firebaseio.com",
+    "project_id": "ommaniapp",
+    "storage_bucket": "ommaniapp.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:859512484425:android:23da9652b9564c74f4c598",
+        "android_client_info": {
+          "package_name": "br.com.opeimpacta.ommani"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "859512484425-qj0j52t4jl7r7dk9ikoko4t8lfni4nqo.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAeVju_mSiahLUPS0VG5XEoGXp-TNIOSaA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "859512484425-qj0j52t4jl7r7dk9ikoko4t8lfni4nqo.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

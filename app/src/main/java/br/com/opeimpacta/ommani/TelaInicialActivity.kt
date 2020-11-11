@@ -50,6 +50,13 @@ class TelaInicialActivity : DebugActivity(), NavigationView.OnNavigationItemSele
         taskProdutos()
     }
 
+    fun enviaNotificacao(produto: Produtos){
+
+        val intent = Intent(this, ProdutoActivity::class.java)
+        intent.putExtra("produto", produto)
+        NotificationUtil.create(1, intent, "Ommani", "Novo produto Dinsponível em ${produto.nome}")
+
+    }
 
     private  var produtos = listOf<Produtos>()
     fun taskProdutos() {
@@ -57,6 +64,7 @@ class TelaInicialActivity : DebugActivity(), NavigationView.OnNavigationItemSele
             produtos = ProdutoService.getProdutos(this)
             runOnUiThread {
                 recyclerProdutos?.adapter = ProdutoAdapter(produtos) { onClickProduto(it) }
+                enviaNotificacao(this.produtos[0])
             }
         }.start()
     }

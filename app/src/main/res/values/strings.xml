@@ -18,4 +18,9 @@
     <string name="navigation_drawer_close">fechar</string>
     <string name="nav_sobre_nos">Sobre</string>
     <string name="nav_sair">Sair</string>
+
+    <string name="API_KEY">AIzaSyB8gTn26FrD5iGt_NPZ4PkYzG5IfMCc_yI</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+
 </resources>
