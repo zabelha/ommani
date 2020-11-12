@@ -50,7 +50,7 @@ open class DebugActivity : AppCompatActivity(), NavigationView.OnNavigationItemS
                 startActivity(intent)
             }
             R.id.nav_sobre_nos -> {
-                var intent = Intent(this, MapasActivity::class.java)
+                var intent = Intent(this, TelaSobreActivity::class.java)
 
                 startActivity(intent)
             }

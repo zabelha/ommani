@@ -11,11 +11,90 @@
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
         <include layout="@layout/toolbar"/>
+
+
+        <TextView
+            android:id="@+id/mensagemInicial"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="30dp"
+            android:gravity="center_horizontal"
+            android:text="A OMMANI"
+            android:textStyle="bold"
+            android:textSize="24sp" />
+
+        <TextView
+            android:id="@+id/textoSobre"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="2dp"
+            android:gravity="center_horizontal"
+            android:text="@string/a_ommani"
+            android:textSize="18sp" />
+
+        <TextView
+            android:id="@+id/significado"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="30dp"
+            android:gravity="center_horizontal"
+            android:text="MAS O QUE SIGNIFICA?"
+            android:textStyle="bold"
+            android:textSize="24sp" />
+        <TextView
+            android:id="@+id/significadoOM"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="2dp"
+            android:gravity="center_horizontal"
+            android:text="@string/significado_om"
+            android:textSize="18sp" />
+
+        <TextView
+            android:id="@+id/significadoMANI"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="2dp"
+            android:gravity="center_horizontal"
+            android:text="@string/significado_mani"
+            android:textSize="18sp" />
+
+        <TextView
+            android:id="@+id/mapa"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="30dp"
+            android:gravity="center_horizontal"
+            android:text="E QUE LUGAR DO MUNDO A OMMANI TA??"
+            android:textStyle="bold"
+            android:textSize="24sp" />
+
+        <TextView
+            android:id="@+id/mapaRes"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="2dp"
+            android:gravity="center_horizontal"
+            android:text="@string/mapa"
+            android:textSize="18sp" />
+
+        <Button
+            android:id="@+id/botao_mapa"
+            android:layout_width="match_parent"
+            android:layout_margin="10dp"
+            android:layout_height="wrap_content"
+            android:stateListAnimator="@null"
+            android:textColor="#ff266a"
+            android:text="VER MAPA" />
+
     </LinearLayout>
 
     <include layout="@layout/nav_view" />
+
+
 
 
 </androidx.drawerlayout.widget.DrawerLayout>

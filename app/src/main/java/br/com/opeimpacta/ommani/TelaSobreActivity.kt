@@ -27,8 +27,15 @@ class TelaSobreActivity : DebugActivity(){
         supportActionBar?.title = "Sobre Nós"
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
 
+        botao_mapa.setOnClickListener { onClickMapa() }
         configuraMenuLateral()
     }
 
+    fun onClickMapa(){
+            var intent = Intent(this, MapasActivity::class.java)
+
+            startActivity(intent)
+        }
+    
 
 }

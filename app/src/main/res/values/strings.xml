@@ -18,6 +18,10 @@
     <string name="navigation_drawer_close">fechar</string>
     <string name="nav_sobre_nos">Sobre</string>
     <string name="nav_sair">Sair</string>
+    <string name="a_ommani"> A OMMANI é uma empresa que oferece três principais produtos: pingintes e cristais, aulas de Yoga e massagem reik. A principio com a fundadora Fernanda que atua dentro dessas três áreas com muito amor e carinho</string>
+    <string name="significado_om"> OM: significa "o todo" e sua vibração. Simboliza o corpo, a fala e o discurso impuros do indivíduo. A repetição do mantra atua nos nossos pensamentos, palavras e ações, podemos nos purificar para atingir o corpo puro, o discurso puro e a mente pura.</string>
+    <string name="significado_mani">MANI: significa "jóia" e simboliza a intenção altruística de se tornar iluminado através da compaixão e do amor. A repetição do mantra purifica a nossa luz interior, traz compaixão e vontade de fazer o bem.</string>
+    <string name="mapa">A OMMANI depende muito das atividades dos dias. Mas temos um lugarzinho fixo que você pode dar uma olhada no mapa logo ai embaixo</string>
 
     <string name="API_KEY">AIzaSyB8gTn26FrD5iGt_NPZ4PkYzG5IfMCc_yI</string>
     <!-- TODO: Remove or change this placeholder text -->
