@@ -15,15 +15,6 @@
         android:orientation="vertical">
         <include layout="@layout/toolbar"/>
 
-        <TextView
-            android:id="@+id/mobsProf"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_margin="30dp"
-            android:gravity="center_horizontal"
-            android:text="OBS: O mapa está na opção 'Sobre' do menu lateral"
-            android:textStyle="bold"
-            android:textSize="15sp" />
 
         <ScrollView
             android:layout_width="match_parent"
